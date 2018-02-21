@@ -1,0 +1,53 @@
+<html>
+<head>
+	<script src="https://unpkg.com/vue"></script>
+	<title>TicTacToe Vue</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+	<div id="tictac">
+		<div v-bind:class="{winner: blockclick, winner_no: !blockclick}">
+			<xisawinner v-if="winner=='X'"></xisawinner>
+			<oisawinner v-if="winner=='O'"></oisawinner>
+			<itsadraw v-if="draw==true"></itsadraw>
+		</div>
+		<div class="scoreboard">
+			<h4 v-bind:class="{turn: x, noturn: !x}">TURN</h4>
+			<i class="fas fa-times"></i>
+			{{xwinning}}:{{owinning}}
+			<i class="far fa-circle"></i>
+			<h4 v-bind:class="{turn: !x, noturn: x}">TURN</h4>
+			
+		</div>
+		
+		<table>
+		<tr>
+		<th v-for="pl in plslice(0, 3)" class="block" v-on:click="setThis(pl)">
+			<p v-if="pl.pen == 'X' "><i class="fas fa-times"></i></p>
+			<p v-if="pl.pen == 'O' "><i class="far fa-circle"></i></p>
+		</th>
+		</tr>
+		<tr>
+		<th v-for="pl in plslice(3, 6)" class="block" v-on:click="setThis(pl)">
+			<p v-if="pl.pen == 'X' "><i class="fas fa-times"></i></p>
+			<p v-if="pl.pen == 'O' "><i class="far fa-circle"></i></i></p>
+		</th>
+		</tr>
+
+		<tr>
+		<th v-for="pl in plslice(6, 9)" class="block" v-on:click="setThis(pl)">
+			<p v-if="pl.pen == 'X' "><i class="fas fa-times"></i></p>
+			<p v-if="pl.pen == 'O' "><i class="far fa-circle"></i></p>
+		</th>
+		</tr>
+	</table>
+	<div v-bind:class="{button_div: blockclick, disabled: !blockclick}">
+		<button v-on:click="restart" class="enabled">RESTART</button>
+	</div>
+	</div>
+
+	<script src="script.js"></script>
+
+</body>
+</html>
