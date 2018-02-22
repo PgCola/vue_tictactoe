@@ -102,13 +102,13 @@ var tictac = new Vue({
 			}
 		},
 		checkDraw: function(){
-			var x = 8;
+			var x = 9;
 			for(var i = 0; i<this.place.length; i++){
 				if(!Number(this.place[i].pen) == true){
 					x = x-1;
 				}
 			}
-			if(x<0 && this.winning() == false){
+			if(x<=0 && this.winning() == false){
 				this.blockclick = true;
 				this.draw = true;
 			}else{

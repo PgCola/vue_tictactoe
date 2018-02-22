@@ -1,112 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:700');
-#tictac{
-	height: 470px;
-	position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.winner_no{
-	display: none;
-}
-.scoreboard{
-	width: 100%;
-	text-align: center;
-	font-family: 'Poppins', sans-serif;
-	background-color: #e1e4ea;
-	margin-bottom: 20px;
-	font-size: 30px;
-}
-.turn{
-	color: #666666;
-	display: inline;
-	transition: color 300ms;
-}
-.noturn{
-	color: #e1e4ea;
-	display: inline;
-	transition: color 300ms;
-}
 
+body{
+	margin: 0;
+}
 
 @keyframes winAnim {
     0% {opacity: 0}
     100%{opacity: 1}
 }
-.winner{
-	z-index: 999;
-	position: absolute;
-	top: 63%;
+
+@media screen and (min-width: 768px){
+#tictac{
+	height: 50vh;
+	position: fixed;
 	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 100%;
-	text-align: center;
-	height: 100%;
-	display: table-cell;
-	vertical-align: center;
-	background-color: rgba(192, 201, 216,0.8);
-	animation-name: winAnim;
-    animation-duration: 1s;
-
-
+	transform: translateX( -50%);
 }
-@keyframes winAnimH {
-    0% {font-size: 0px;}
-    50%{font-size: 80px;}
-    100% {font-size: 60px;}
-}
-.winner h1{
-	top: 50%;
-	font-size: 60px;
-	position: relative;
-	transform: translateY(-100%);
-	font-family: 'Poppins', sans-serif;
-	animation-name: winAnimH;
-    animation-duration: 1s;
-}
-.winner i{
-	width: 100%;
-}
-table {
-  border-collapse: collapse;
-}
-table td, table th {
-  border: 3px solid #ffc689;
-}
-table tr:first-child th {
-  border-top: 0;
-}
-table tr th:first-child {
-  border-left: 0;
-}
-table tr th:last-child {
-  border-right: 0;
-}
-table tr:last-child th{
-  border-bottom: 0;
-}
-tr{
-}
-th{
-	width: 150px;
-	height: 150px;
-}
-
-@keyframes pAnim {
-    0% {font-size: 0px; transform: rotate(0deg);}
-    25%{transform: rotate(90deg);}
-    50%{font-size: 130px;}
-    75%{transform: rotate(0deg);}
-    100% {font-size: 100px;}
-}
-
-p{
-	font-size: 100px;
-	animation-name: pAnim;
-    animation-duration: 0.3s;
-}
-.disabled{
-	display: none;
+.scoreboard{
+	margin-bottom: 20px;
+	font-size: 30px;
 }
 @keyframes enaAnim{
     0% {opacity: 0}
@@ -135,6 +47,187 @@ p{
 	animation-name: enaAnimHover;
 	animation-duration: 0.3s;
 	animation-fill-mode: forwards;
+}
+th{
+	width: 150px;
+	height: 150px;
+}
+
+.winner{
+	z-index: 999;
+	position: absolute;
+	top: 63%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	text-align: center;
+	height: 100%;
+	display: table-cell;
+	vertical-align: center;
+	background-color: rgba(192, 201, 216,0.8);
+	animation-name: winAnim;
+    animation-duration: 1s;
+
+}
+@keyframes winAnimH {
+    0% {font-size: 0px;}
+    50%{font-size: 80px;}
+    100% {font-size: 60px;}
+}
+.winner h1{
+	top: 50%;
+	font-size: 60px;
+	position: relative;
+	transform: translateY(-100%);
+	font-family: 'Poppins', sans-serif;
+	animation-name: winAnimH;
+    animation-duration: 1s;
+}
+.winner i{
+	width: 100%;
+}
+@keyframes pAnim {
+    0% {font-size: 0px; transform: rotate(0deg);}
+    25%{transform: rotate(90deg);}
+    50%{font-size: 130px;}
+    75%{transform: rotate(0deg);}
+    100% {font-size: 100px;}
+}
+p{
+	font-size: 100px;
+	animation-name: pAnim;
+    animation-duration: 0.3s;
+}
+
+
+}
+@media screen and (max-width: 767px){
+#tictac{
+	height: 50vh;
+	width: 100%;
+	position: fixed;
+	margin: 0 auto;
+}
+.scoreboard{
+	margin-bottom: 5px;
+	font-size: 15px;
+}
+.button_div{
+	animation-name: enaAnim;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+.enabled{
+	border: 2px solid #5cdd4d;
+	color: #5cdd4d;
+	background-color: transparent;
+	width: 100%;
+	height: 50px;
+	font-family: 'Poppins', sans-serif;
+	margin-top: 25px;
+	position: fixed;
+	bottom: 2%;
+	
+}
+table{
+	position: relative;
+	top:50%;
+	transform: translate(0%, -25%);
+}
+th{
+	min-width: 33.3vw;
+	max-width: 33.3vw;
+	height: 33.3vw;
+}
+.winner{
+	z-index: 999;
+	position: absolute;
+	top: 55%;
+	transform: translate(0%, -25%);
+	width: 100vw;
+	text-align: center;
+	height: 110vw;
+	display: table-cell;
+	vertical-align: center;
+	background-color: rgba(192, 201, 216,0.8);
+	animation-name: winAnim;
+    animation-duration: 1s;
+}
+@keyframes winAnimH {
+    0% {font-size: 0px;}
+    50%{font-size: 65px;}
+    100% {font-size: 50px;}
+}
+.winner h1{
+	top: 50%;
+	font-size: 50px;
+	position: relative;
+	transform: translateY(-100%);
+	font-family: 'Poppins', sans-serif;
+	animation-name: winAnimH;
+    animation-duration: 1s;
+}
+.winner i{
+	width: 100%;
+}
+@keyframes pAnim {
+    0% {font-size: 0px; transform: rotate(0deg);}
+    25%{transform: rotate(90deg);}
+    50%{font-size: 110px;}
+    75%{transform: rotate(0deg);}
+    100% {font-size: 80px;}
+}
+p{
+	font-size: 80px;
+	animation-name: pAnim;
+    animation-duration: 0.3s;
+}
+
+
+}
+
+.winner_no{
+	display: none;
+}
+.scoreboard{
+	width: 100%;
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+	background-color: #e1e4ea;
+	
+}
+.turn{
+	color: #666666;
+	display: inline;
+	transition: color 300ms;
+}
+.noturn{
+	color: #e1e4ea;
+	display: inline;
+	transition: color 300ms;
+}
+
+table {
+  border-collapse: collapse;
+}
+table td, table th {
+  border: 3px solid #ffc689;
+}
+table tr:first-child th {
+  border-top: 0;
+}
+table tr th:first-child {
+  border-left: 0;
+}
+table tr th:last-child {
+  border-right: 0;
+}
+table tr:last-child th{
+  border-bottom: 0;
+}
+
+.disabled{
+	display: none;
 }
 .div{
 	height: auto;
