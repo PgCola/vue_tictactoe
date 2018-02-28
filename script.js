@@ -93,7 +93,7 @@ var tictac = new Vue({
 			if(this.blockclick == true){
 				this.blockclick = false;
 				for(var i=0; i<this.place.length; i++){
-					place[i].pen = i;
+					place[i].pen = i+1;
 					}
 					this.o = false;
 					this.winner = "b";
@@ -105,15 +105,16 @@ var tictac = new Vue({
 			var x = 9;
 			for(var i = 0; i<this.place.length; i++){
 				if(!Number(this.place[i].pen) == true){
-					x = x-1;
+					--x;
 				}
 			}
 			if(x==0 && this.winning() == false){
 				this.blockclick = true;
 				this.draw = true;
 			}else{
-				console.log(x);
+				
 			}
+			console.log(x);
 		}
 	}
 
