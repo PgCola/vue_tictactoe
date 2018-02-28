@@ -6,22 +6,22 @@ Vue.component('oisawinner',{
 	template:'<h1><i class="far fa-circle"></i>WINNER!</h1>'
 });
 Vue.component('itsadraw',{
-	template:'<h1>ITS A DRAW!</h1>'
+	template:'<h1>DRAW!</h1>'
 });
 
 var tictac = new Vue({
 	el:"#tictac",
 	data:{
 		place:[
-			{pen: '0'},
 			{pen: '1'},
 			{pen: '2'},
-			{pen: '3'}, 
+			{pen: '3'},
 			{pen: '4'}, 
 			{pen: '5'}, 
 			{pen: '6'}, 
-			{pen: '7'},
-			{pen: '8'}		
+			{pen: '7'}, 
+			{pen: '8'},
+			{pen: '9'}		
 			],
 			x: false,
 			blockclick: false,
@@ -108,7 +108,7 @@ var tictac = new Vue({
 					x = x-1;
 				}
 			}
-			if(x<=0 && this.winning() == false){
+			if(x==0 && this.winning() == false){
 				this.blockclick = true;
 				this.draw = true;
 			}else{
